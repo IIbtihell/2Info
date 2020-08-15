@@ -1,0 +1,120 @@
+from tkinter import *
+import tkinter as tk
+from tkinter import messagebox as mbox
+fen=Tk()
+fen.title('PLATFORM EDUCATION ONLINE PEO ')
+txt1=Label(fen, text=' BIENVENUE A PEO !', fg='pink', bg='black')
+txt1.grid(row=0, column=1)
+txt1=Label(fen,text ='LOGIN:')
+txt2=Label(fen,text ='PASSWORD:')
+e1=Entry(fen)
+e2=Entry(fen,show="*")
+txt1.grid(row=1)
+txt2.grid(row=2)
+e1.grid(row=1,   column=1)
+
+e2.grid(row=2,   column=1)
+
+txt3=Label(fen, text=' CHER CLIENT , TENTEZ DE REMPLIR VOTRE FICHE  :', fg='blue', bg='black')
+txt3.grid(row=3, column=1)
+txt3=Label(fen, text='SAISIR VOTRE NOM ET PRENOM: ')
+txt3.grid(row=4)
+txt4=Label(fen, text='SAISIR VOTE NIVEAU EDUCATIF: ')
+txt4.grid(row=5)
+txt5=Label(fen, text="SAISIR VOTRE MOYEN DE PAIEMENT :")
+txt5.grid(row=7)
+e3=Entry(fen)
+e3.grid(row=4, column=1)
+e4=Entry(fen)
+e4.grid(row=5, column=1)
+txt6=Label(fen, text='SAISIR VOS MATIERES DESIREES :')
+txt6.grid(row=9)
+txt7=Label(fen,text='NB° DE SEANCES :')
+txt7.grid(row=10, column=1)
+varchoix=tk.StringVar()
+v1=Radiobutton(fen, text='Chèque', variable=varchoix, value='Chèque')
+v1.grid(row=8, column=0)
+v2=Radiobutton(fen, text='Carte bancaire', variable=varchoix, value='Carte bancaire')
+v2.grid(row=8, column=1)
+v3=Radiobutton(fen, text='POSTE', variable=varchoix, value='POSTE')
+v3.grid(row=8, column=2)
+choix1=tk.StringVar()
+choix2=tk.StringVar()
+choix3=tk.StringVar()
+choix4=tk.StringVar()
+choix5=tk.StringVar()
+c1=Checkbutton(fen, text='MATHS ', variable=choix1, onvalue='MATHS', offvalue='')
+txt8=Label(fen, text=' ')
+e3=Entry(fen)
+e3.grid(row=11, column=1)
+c1.grid(row=11, column=0)
+c2=Checkbutton(fen, text='PHYSICS ', variable=choix2, onvalue='PHYSICS', offvalue='')
+txt9=Label(fen, text=' ')
+e4=Entry(fen)
+e4.grid(row=12, column=1)
+c2.grid(row=12, column=0)
+c3=Checkbutton(fen, text='TECHNOLOGY ', variable=choix3, onvalue='TECHNOLOGY', offvalue='')
+txt10=Label(fen, text=' ')
+e5=Entry(fen)
+e5.grid(row=13, column=1)
+c3.grid(row=13, column=0)
+c4=Checkbutton(fen, text='SCIENCE ', variable=choix4, onvalue='SCIENCE', offvalue='')               
+txt11=Label(fen, text=' ')
+e6=Entry(fen)
+e6.grid(row=14, column=1)
+c4.grid(row=14, column=0)               
+c5=Checkbutton(fen, text='CHEMISTRY ', variable=choix5, onvalue='CHEMISTRY', offvalue='')
+txt12=Label(fen, text=' ')
+e7=Entry(fen)
+e7.grid(row=15, column=1)
+c5.grid(row=15, column=0)
+txt13=Label(fen,text="PRIX DUNE SEANCE : 10dt")
+txt13.grid(row=16, column=1)
+b2=Button(fen, text='QUITTER', command=fen.destroy, bg='pink', fg='black')
+b2.grid(row=17, column=1)
+def valider():
+    p1=e1.get()
+    p2=e2.get()
+    p3=e3.get()
+    p4=e4.get()
+    p5=varchoix.get()
+    p6=choix1.get()
+    p7=choix2.get()
+    p8=choix3.get()
+    p9=choix4.get()
+    p10=choix5.get()
+    p11=int(e3.get())*10
+    p12=int(e4.get())*10
+    p13=int(e5.get())*10
+    p14=int(e6.get())*10
+    p15=int(e7.get())*10
+    mt=p11+p12+p13+p14+p15
+    fen1=Tk()
+    fen1.title('VOTRE FICHE : ' ,bg='pink' , fg='black')
+    l1=Label(fen1,text='NOM ET PRENOM :'  +p3 )
+    l1.pack()
+    l2=Label(fen1,text= ' NIVEAU EDUCATIF :'  +p4 )
+    l2.pack()
+    l3=Label(fen1,text='MONTANT :' +str(mt)+'   ' +"dt" )
+    l3.pack()
+    l4=Label(fen1,text="MOYEN DE PAIEMENT  : "  ""+p3 )
+    l4.pack()
+    l5=Label(fen1,text='MATIERES DESIREES : '+'   '+p6+'   '+p7+'   '+p8+'  '+p9+'   '+p10)
+    l5.pack()
+    l6=Label(fen1,text='BONNE CHANCE!')
+    b3=Button(fen1,text='CONFIRMER',command=fen1.destroy,bg='pink',fg='black')
+    b3.pack()
+b1=Button(fen, text='TERMINER', command=valider, bg='pink', fg='black')
+b1.grid(row=17, column=0)
+
+
+
+fen.mainloop()
+
+
+
+
+
+
+
+
